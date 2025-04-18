@@ -8,6 +8,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import com.mangaapp.HomeRoute
 import com.mangaapp.manga.util.NavigationModeUtil
 
@@ -16,20 +17,30 @@ import com.mangaapp.manga.util.NavigationModeUtil
  */
 @Composable
 fun BottomNavigationBar(currentRoute: String?, onNavigate: (HomeRoute) -> Unit) {
-    val items = listOf(NavigationModeUtil.MANGA.name to Icons.Default.Book, NavigationModeUtil.FACE.name to Icons.Default.Face)
-    NavigationBar {
+    val items =
+        listOf(NavigationModeUtil.MANGA.name to Icons.Default.Book, NavigationModeUtil.FACE.name to Icons.Default.Face)
+    NavigationBar(containerColor = Color.Black) {
         items.forEach { (route, icon) ->
+            val selected = currentRoute == route
             NavigationBarItem(
-                selected = currentRoute == route,
+                selected = selected,
                 onClick = {
-                    onNavigate(HomeRoute(route))
+                    if (selected.not()) onNavigate(HomeRoute(route))
                 },
                 icon = {
-                    Icon(imageVector = icon, contentDescription = route)
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = route,
+                        tint = if (selected) Color.White else Color.LightGray
+                    )
                 },
                 label = {
-                    Text(route.replaceFirstChar { it.uppercase() })
-                }
+                    Text(
+                        text = route.replaceFirstChar { it.uppercase() },
+                        color = if (selected) Color.White else Color.LightGray
+                    )
+                },
+                alwaysShowLabel = true
             )
         }
     }
