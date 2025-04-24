@@ -1,6 +1,6 @@
+import de.undercouch.gradle.tasks.download.Download
 import java.io.FileInputStream
 import java.util.Properties
-import de.undercouch.gradle.tasks.download.Download
 
 plugins {
     alias(libs.plugins.android.application)

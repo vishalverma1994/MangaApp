@@ -38,7 +38,6 @@ class MangaRemoteMediator(
                 return MediatorResult.Success(endOfPaginationReached = true)
             }
             LoadType.APPEND -> {
-                val lastItem = state.lastItemOrNull()
                 val loadedItems = state.pages.sumOf { it.data.size }
                 val nextPage = (loadedItems / state.config.pageSize) + 1
                 nextPage

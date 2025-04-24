@@ -1,13 +1,9 @@
 package com.mangaapp.manga.data.repository
 
-import android.util.Log
 import androidx.paging.PagingSource
 import com.mangaapp.manga.data.dto.toManga
 import com.mangaapp.manga.data.local.MangaDao
 import com.mangaapp.manga.data.local.MangaEntity
-import com.mangaapp.manga.data.local.SessionManagerDataStore
-import com.mangaapp.manga.data.local.UserDao
-import com.mangaapp.manga.data.local.UserEntity
 import com.mangaapp.manga.data.local.toManga
 import com.mangaapp.manga.data.network.ApiService
 import com.mangaapp.manga.domain.model.Manga

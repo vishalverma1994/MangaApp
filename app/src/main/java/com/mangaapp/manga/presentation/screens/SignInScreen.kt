@@ -50,7 +50,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mangaapp.R
-import com.mangaapp.manga.presentation.viewmodels.MangaViewModel
 import com.mangaapp.manga.presentation.viewmodels.UserViewModel
 import kotlin.system.exitProcess
 
